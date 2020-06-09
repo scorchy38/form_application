@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class UploadVideo extends StatefulWidget {
   @override
   _UploadVideoState createState() => _UploadVideoState();
@@ -28,15 +27,13 @@ class _UploadVideoState extends State<UploadVideo> {
   bool terms2 = false;
   bool terms3 = false;
   bool terms4 = false;
+  bool saveAttempt = false;
+  String selectedValue,selectedValue2;
   final titleController = TextEditingController();
   final synController = TextEditingController();
   final pHNameController = TextEditingController();
   final pHEmail = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  String selectedValue;
-  String selectedValue2;
-  List<int> selectedItems = [];
-  bool saveAttempt = false;
   final List<DropdownMenuItem> items = [];
   final List<DropdownMenuItem> items2 = [];
   final List<String> countries = [
@@ -257,6 +254,8 @@ class _UploadVideoState extends State<UploadVideo> {
   final listOfTypes = ["Type A", "Type B"];
   String dropdownValue = 'Type A';
   String dropdownValue2 = 'Type A';
+
+
   @override
   void initState() {
     for (var i in countries) {
@@ -271,9 +270,9 @@ class _UploadVideoState extends State<UploadVideo> {
         value: i,
       ));
     }
-
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {
